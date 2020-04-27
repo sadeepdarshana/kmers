@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Sadeep/Desktop/pre_processor/main.cpp
+iostream
+-
+random
+-
+time.h
+-
+fstream
+-
+vectorizer.h
+C:/Users/Sadeep/Desktop/pre_processor/vectorizer.h
+
+C:/Users/Sadeep/Desktop/pre_processor/vectorizer.h
+stdint.h
+-
+iostream
+-
+
