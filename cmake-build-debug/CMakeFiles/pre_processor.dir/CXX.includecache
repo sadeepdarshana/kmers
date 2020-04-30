@@ -6,21 +6,35 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Sadeep/Desktop/pre_processor/kseq_cpp.h
+limits
+-
+string
+-
+fstream
+-
+memory
+-
+
 C:/Users/Sadeep/Desktop/pre_processor/main.cpp
 iostream
--
-random
--
-time.h
 -
 fstream
 -
 vectorizer.h
 C:/Users/Sadeep/Desktop/pre_processor/vectorizer.h
+kseq_cpp.h
+C:/Users/Sadeep/Desktop/pre_processor/kseq_cpp.h
 
 C:/Users/Sadeep/Desktop/pre_processor/vectorizer.h
+cmath
+-
 stdint.h
 -
 iostream
+-
+random
+-
+ctime
 -
 

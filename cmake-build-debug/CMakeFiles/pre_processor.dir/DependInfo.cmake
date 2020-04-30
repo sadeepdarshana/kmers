@@ -11,6 +11,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "c:/users/sadeep/appdata/local/programs/python/python36/include"
   )
 
 # Targets to which this target links.

@@ -1,42 +1,44 @@
 #include <iostream>
-#include <random>
-#include <time.h>
 #include <fstream>
 #include "vectorizer.h"
+#include "kseq_cpp.h"
 
 using namespace std;
-
-vector<freq_info>fi;
-
-void split_n_count(const char *raw_seq, int n,int length_mean,int length_stdev,int count){
+using namespace kseq_cpp;
 
 
-    std::default_random_engine generator(time(0));;
-    std::normal_distribution<double> distribution(length_mean,length_stdev);
 
+void p_kmer(uint8_t v) {
 
-    while(count){
-        int len =  (int)distribution(generator);
-        int start = rand() % n;
-        if(start+len>=n||len<2)continue;
-
-        uint8_t seq[n/4+1];
-        acgt_to_binary(raw_seq, n, seq);
-        freq_info segment_freqs = kmer_counter(seq, start,start+len);
-        fi.push_back(segment_freqs);
-        count--;
+    int k = 3;
+    uint8_t comp = 0;
+    uint8_t mask = 3;
+    char ch[4] = {};
+    ch[k] = 0;
+    for (int i = 0; i < k; i++) {
+        comp = (mask & v) >> 2u * i;
+        if (comp == 0)ch[k - 1 - i] = 'A';
+        else if (comp == 1)ch[k - 1 - i] = 'C';
+        else if (comp == 2)ch[k - 1 - i] = 'G';
+        else if (comp == 3)ch[k - 1 - i] = 'T';
+        mask <<= 2u;
     }
+    cout<<ch<<endl;
 }
 
 int main() {
-    std::string str;
-    ifstream file ("seq.txt");
-    std::getline(file,str);
-    const char* c = str.c_str();
 
-    split_n_count(c,str.length(),3,1,20);
 
-    int n;
-    n++;
+    kseq_parser kseq("seq.fasta");
+    kseq.read_seq();
+    std::cout << kseq.name << std::endl;
+    std::cout << kseq.seq << std::endl;
+
+    cout<<kseq.seq[41]<<kseq.seq[42]<<kseq.seq[43]<<kseq.seq[44]<<kseq.seq[45];
+    vector<freq_info> list;
+    //split_n_count(c,str.length(),50,20,20, &list);
+
+    cout<<"well"<<endl;
+
     return 0;
 }
