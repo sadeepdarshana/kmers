@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pre_processor.dir/main.cpp.obj"
   "CMakeFiles/pre_processor.dir/vectorizer.cpp.obj"
-  "libpre_processor.dll.a"
   "pre_processor.exe"
   "pre_processor.exe.manifest"
+  "pre_processor.lib"
   "pre_processor.pdb"
 )
 

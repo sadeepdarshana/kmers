@@ -21,12 +21,14 @@ PyObject* tanh_impl(PyObject*, PyObject* o) {
 }
 
 PyObject* _bind_split_n_count(PyObject *module,PyObject *args);
-PyObject* _bind_split_n_count_fasta(PyObject *module,PyObject *args);
+PyObject* _bind_split_n_count_fasta(PyObject *module,PyObject *args);;
+PyObject* _bind_split_n_count_fasta4(PyObject *module,PyObject *args);
 
 static PyMethodDef methods[] = {
 
         { "split_n_count", (PyCFunction)_bind_split_n_count, METH_VARARGS, nullptr },
         { "split_n_count_fasta", (PyCFunction)_bind_split_n_count_fasta, METH_VARARGS, nullptr },
+        { "split_n_count_fasta4", (PyCFunction)_bind_split_n_count_fasta4, METH_VARARGS, nullptr },
         { nullptr, nullptr, 0, nullptr }
 };
 

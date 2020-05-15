@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Sadeep/Desktop/pre_processor/main.cpp" "C:/Users/Sadeep/Desktop/pre_processor/cmake-build-debug/CMakeFiles/pre_processor.dir/main.cpp.obj"
   "C:/Users/Sadeep/Desktop/pre_processor/vectorizer.cpp" "C:/Users/Sadeep/Desktop/pre_processor/cmake-build-debug/CMakeFiles/pre_processor.dir/vectorizer.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

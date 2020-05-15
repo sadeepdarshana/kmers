@@ -8,4 +8,5 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(c:/users/sadeep/appdata/local/programs/python/python36/include)
 link_directories(c:/users/sadeep/appdata/local/programs/python/python36/libs)
 
-add_executable(pre_processor main.cpp vectorizer.cpp  vectorizer.h )
+add_executable(pre_processor main.cpp vectorizer.cpp  vectorizer.h  )
+#add_executable(pre_processor main.cpp vectorizer.cpp  vectorizer.h vectorizer_bind.cpp vectorizer_bind.h )

@@ -26,19 +26,42 @@ void p_kmer(uint8_t v) {
     cout<<ch<<endl;
 }
 
+
+
+uint8_t reverse_compliment(uint8_t v)
+{
+    const int k = 4;
+    unsigned int comp = 0;
+    unsigned int mask = 3;
+    for (int i=0;i<k;i++)
+    {
+        comp += (mask & v)>>2u*i;
+        comp <<=2u;
+        mask <<=2u;
+    }
+    return (1u<<(2u*k))-1 - (comp>>2u);
+}
+uint8_t merge_map[256];
+const int max_kmer = 255;
+void build_merge_map(){
+    int last_pos = 0;
+    for(int i=0;i<max_kmer+1;i++)
+    {
+        unsigned int rv = reverse_compliment(i);
+        if(rv<i)continue;
+        merge_map[i]  = last_pos;
+        merge_map[rv] = last_pos++;
+
+    }
+
+    cout<<'{';
+    for(int i=0;i<256;i++)cout<<int(merge_map[i])<<',';
+    cout<<'}';
+}
+
+
 int main() {
 
-
-    kseq_parser kseq("seq.fasta");
-    kseq.read_seq();
-    std::cout << kseq.name << std::endl;
-    std::cout << kseq.seq << std::endl;
-
-    cout<<kseq.seq[41]<<kseq.seq[42]<<kseq.seq[43]<<kseq.seq[44]<<kseq.seq[45];
-    vector<freq_info> list;
-    //split_n_count(c,str.length(),50,20,20, &list);
-
-    cout<<"well"<<endl;
-
+    build_merge_map();
     return 0;
 }
