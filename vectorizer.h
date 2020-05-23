@@ -19,7 +19,7 @@ struct freq_info{
 };
 struct freq_info4{
     int start,end;
-    int freqs[128] = {0};
+    int freqs[136] = {0};
 
     freq_info4(int start, int end) : start(start), end(end) {}
 };

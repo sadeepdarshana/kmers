@@ -6,10 +6,7 @@
 using namespace std;
 using namespace kseq_cpp;
 
-
-
 void p_kmer(uint8_t v) {
-
     int k = 3;
     uint8_t comp = 0;
     uint8_t mask = 3;

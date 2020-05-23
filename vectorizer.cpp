@@ -1,6 +1,8 @@
 
 #include "vectorizer.h"
 
+const uint8_t acgt_order[] = { 'A','C','G','T' };
+
 //3mer const
 const uint8_t kmer3_window_byte1[] = { 252,63,15,3 };
 const uint8_t kmer3_window_byte2[] = { 0,0,192,240 };
@@ -9,9 +11,6 @@ const uint8_t b1_r_shifts[] = { 2,0,0,0 };
 const uint8_t b1_l_shifts[] = { 0,0,2,4 };
 const uint8_t b2_r_shifts[] = { 0,0,6,4 };
 const uint8_t b2_l_shifts[] = { 0,0,0,0 };
-
-
-const uint8_t acgt_order[] = { 'A','C','G','T' };
 
 const uint8_t merge_map[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 7, 11, 12, 13, 3, 14, 15, 16, 13, 17, 18, 19, 10, 20, 21,
                              19, 6, 22, 23, 16, 2, 24, 25, 23, 12, 26, 27, 21, 9, 28, 27, 18, 5, 29, 25, 15, 1, 30, 29,
@@ -27,9 +26,6 @@ const uint8_t b1_l_shifts4[] = { 0,2,4,6 };
 
 const uint8_t b2_r_shifts4[] = { 0,6,4,2 };
 const uint8_t b2_l_shifts4[] = { 0,0,0,0 };
-
-
-const uint8_t acgt_order4[] = { 'A','C','G','T' };
 
 const uint8_t merge_map4[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,11,31,32,33,34,35,36,37,38,39,40,41,
                               23,42,43,44,7,45,46,47,48,49,50,51,34,52,53,54,19,55,56,57,3,58,59,60,57,61,62,63,44,64,65,66,30,67,68,69,14,70,71,72,54
@@ -75,7 +71,7 @@ freq_info4 kmer_counter4(const uint8_t* seq, int start, int end) { // both ends 
     for (int i = start; i < end - 1; i++) {
         uint8_t kmer = ((seq[i / 4] & kmer3_window_byte14[p]) >> b1_r_shifts4[p]) << b1_l_shifts4[p] |
                        ((seq[i / 4 + 1] & kmer3_window_byte24[p]) >> b2_r_shifts4[p]) << b2_l_shifts4[p];
-        fi.freqs[merge_map[kmer]]++;
+        fi.freqs[merge_map4[kmer]]++;
         p = (p + 1) % 4;
     }
     return fi;

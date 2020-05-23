@@ -28,8 +28,8 @@ PyObject* freq_info_list_to_py4(std::vector<freq_info4>* list){
         PyObject* t = PyTuple_New(3);
         PyTuple_SetItem(t, 0, PyLong_FromLong(list->at(c).start));
         PyTuple_SetItem(t, 1, PyLong_FromLong(list->at(c).end));
-        PyObject* arr = PyList_New(128);
-        for(int i=0;i<128;i++){
+        PyObject* arr = PyList_New(136);
+        for(int i=0;i<136;i++){
             PyList_SetItem(arr,i,PyLong_FromLong(list->at(c).freqs[i]));
         }
         PyTuple_SetItem(t, 2, arr);

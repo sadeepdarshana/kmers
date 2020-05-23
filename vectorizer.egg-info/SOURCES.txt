@@ -1,0 +1,7 @@
+setup.py
+vectorizer.cpp
+vectorizer_bind.cpp
+vectorizer.egg-info/PKG-INFO
+vectorizer.egg-info/SOURCES.txt
+vectorizer.egg-info/dependency_links.txt
+vectorizer.egg-info/top_level.txt
